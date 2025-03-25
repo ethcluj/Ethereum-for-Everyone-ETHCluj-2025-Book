@@ -1,4 +1,5 @@
 # 📘 Ethereum for Everyone - ETHCluj 2025 book
+# (Work in progress)
 ### *The Complete Web3 Onboarding Guide for Developers And young entrepreneurs*
 
 ---
