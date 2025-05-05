@@ -15,30 +15,27 @@ This book is designed as a bilingual, open-source learning journey for those tra
 ### 🇬🇧 English
 - [Chapter 1: Why Are We Here?](en/01-why-are-we-here.md)
 - [Chapter 2: Web2 vs. Web3: Key Differences](en/02-web2-vs-web3.md)
-- [Chapter 3: Blockchain Fundamentals](en/03-blockchain-fundamentals.md)
-- [Chapter 4: Ethereum as the Foundation of Web3](en/04-ethereum-foundation.md)
-- [Chapter 5: Smart Contracts Demystified](en/05-smart-contracts.md)
-- [Chapter 6: Setting Up Your Solidity Environment](en/06-solidity-env.md)
-- [Chapter 7: Building the Frontend for Web3 Apps](en/07-frontend-guide.md)
-- [Chapter 8: Testing Smart Contracts](en/08-testing-smart-contracts.md)
-- [Chapter 9: Smart Contract Security and Audits](en/09-security-audits.md)
-- [Chapter 10: Ethereum in Action – Real-World Use Cases](en/10-real-world-usecases.md)
-- [Chapter 11: Decentralized Finance (DeFi) Overview](en/11-defi-overview.md)
-- [Chapter 12: Scaffold – Boilerplate for Hackathons](en/12-scaffold.md)
+- [Chapter 3: Blockchain & Ethereum Fundamentals](en/03-blockchain-fundamentals.md)
+- [Chapter 4: Smart Contracts Demystified](en/04-smart-contracts.md)
+- [Chapter 5: Setting Up Your Solidity Environment](en/05-solidity-env.md)
+- [Chapter 6: Building the Frontend for Web3 Apps](en/06-frontend-guide.md)
+- [Chapter 7: Testing Smart Contracts](en/07-testing-smart-contracts.md)
+- [Chapter 8: Smart Contract Security and Audits](en/08-security-audits.md)
+- [Chapter 9: Ethereum in Action: DeFi & Real‑World Use Cases](en/09-real-world-usecases.md)
+- [Chapter 10: Tokenomics & Fundraising Strategies](en/10-tokenomics-fundraising.md)
 
 ### 🇷🇴 Română
 - [Capitolul 1: De ce suntem aici?](ro/01-de-ce-suntem-aici.md)
 - [Capitolul 2: Web2 vs. Web3 – Diferențe esențiale](ro/02-web2-vs-web3.md)
 - [Capitolul 3: Fundamentele tehnologiei blockchain](ro/03-fundamentele-blockchainului.md)
-- [Capitolul 4: Ethereum ca fundație pentru Web3](ro/04-ethereum-baza-web3.md)
-- [Capitolul 5: Despre Smart Contracts](ro/05-smart-contracts-explicati.md)
-- [Capitolul 6: Configurarea mediului Solidity](ro/06-mediu-solidity.md)
-- [Capitolul 7: Ghid de frontend pentru aplicații Web3](ro/07-ghid-frontend.md)
-- [Capitolul 8: Testarea Smart Contracts](ro/08-testarea-contractelor.md)
-- [Capitolul 9: Securitatea și auditul contractelor](ro/09-securitate-audit.md)
-- [Capitolul 10: Ethereum în acțiune – Cazuri reale](ro/10-cazuri-reale.md)
-- [Capitolul 11: Prezentare generală DeFi](ro/11-prezentare-defi.md)
-- [Capitolul 12: Scaffold – Boilerplate pentru hackathoane](ro/12-scaffold.md)
+- [Capitolul 4: Despre Smart Contracts](ro/04-smart-contracts-explicati.md)
+- [Capitolul 5: Configurarea mediului Solidity](ro/05-mediu-solidity.md)
+- [Capitolul 6: Ghid de frontend pentru aplicații Web3](ro/06-ghid-frontend.md)
+- [Capitolul 7: Testarea Smart Contracts](ro/07-testing-smart-contracts.md)
+- [Capitolul 8: Securitatea și auditul contractelor](ro/08-securitate-audit.md)
+- [Capitolul 9: Ethereum în acțiune – Cazuri reale](ro/09-cazuri-reale.md)
+- [Capitolul 10: Tokenomics și Strategii de Finanțare](ro/10-tokenomics-finantare.md)
+- [Capitolul 11: Scaffold – Boilerplate pentru hackathoane](ro/11-scaffold.md)
 
 ---
 
@@ -61,19 +58,18 @@ This book is a collaborative, community-driven effort created with ❤️ by peo
 
 ## ✍️ Contributors
 
-| Contribution     | Name           | GitHub                             | Other Contact                  |
-|------------------|----------------|-------------------------------------|--------------------------------|
-| Coordinator       |Catalin Balut | [@CatalinBalut](https://github.com/CatalinBalut) | [X](https://x.com/catalin_balut) |
-| Chapter 1        |                |                                     |                                |
-| Chapter 2        |Eduard Sipos    |                                     |                                |
-| Chapter 3        |                |                                     |                                |
-| Chapter 4        |                |                                     |                                |
-| Chapter 5        |                |                                     |                                |
-| Chapter 6        |Raoul Schaffranek                |                                     |[X](https://x.com/RaoulSaffron)                                |
-| Chapter 7        |Andrei Văcaru   |                                     |                                |
-| Chapter 8        |                |                                     |                                |
-| Chapter 9        |Alin Mihai Barbatei               |[@abarbatei](https://github.com/abarbatei)                        |                                |[X](https://x.com/abarbatei
-| Chapter 10       |                |                                     |                                |
-| Chapter 11       |                |                                     |                                |
-| Chapter 12       |                |                                     |                                |
+| Contribution | Name                  | GitHub                                                | Other Contact                    |
+|-------------|----------------------|-------------------------------------------------------|----------------------------------|
+| Coordinator | Catalin Balut        | [@CatalinBalut](https://github.com/CatalinBalut)     | [X](https://x.com/catalin_balut) |
+| Chapter 1   | Liam McMaster        |                                                       | [LinkedIn](https://www.linkedin.com/in/liam-patrick-mcmaster) |
+| Chapter 2   | Eduard Sipos         | [@siposeduard](https://github.com/siposeduard)       | [LinkedIn](https://www.linkedin.com/in/eduard-sipos/) |
+| Chapter 3   |                      |                                                       |                                  |
+| Chapter 4   | Robert George Benedek| [@911-Benedek-RobertGeorge](https://github.com/911-Benedek-RobertGeorge) | [LinkedIn](https://www.linkedin.com/in/benedek-robert/) |
+| Chapter 5   | Raoul Schaffranek    | [@RaoulSchaffranek](https://github.com/RaoulSchaffranek) | [X](https://x.com/RaoulSaffron)  |
+| Chapter 6   |                      |                                                       |                                  |
+| Chapter 7   | Andrei Văcaru        | [@anvacaru](https://github.com/anvacaru)             |                                  |
+| Chapter 8   | Alin Mihai Barbatei  | [@abarbatei](https://github.com/abarbatei)          | [X](https://x.com/abarbatei)     |
+|            | Alexandru Gazdac      | [@Handrulica](https://github.com/Handrulica)         | [LinkedIn](https://www.linkedin.com/in/alexandru-gazdac/) |
+| Chapter 9   |                      |                                                       |                                  |
+| Chapter 10  |                      |                                                       |                                  |
 
