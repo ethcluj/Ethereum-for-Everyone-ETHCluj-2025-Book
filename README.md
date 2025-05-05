@@ -69,7 +69,6 @@ This book is a collaborative, community-driven effort created with ❤️ by peo
 | Chapter 6   |                      |                                                       |                                  |
 | Chapter 7   | Andrei Văcaru        | [@anvacaru](https://github.com/anvacaru)             |                                  |
 | Chapter 8   | Alin Mihai Barbatei  | [@abarbatei](https://github.com/abarbatei)          | [X](https://x.com/abarbatei)     |
-|            | Alexandru Gazdac      | [@Handrulica](https://github.com/Handrulica)         | [LinkedIn](https://www.linkedin.com/in/alexandru-gazdac/) |
-| Chapter 9   |                      |                                                       |                                  |
-| Chapter 10  |                      |                                                       |                                  |
+| Chapter 9   | Alexandru Gazdac      | [@Handrulica](https://github.com/Handrulica)         | [LinkedIn](https://www.linkedin.com/in/alexandru-gazdac/) |
+| Chapter 10   |                      |                                                       |                                  |
 
