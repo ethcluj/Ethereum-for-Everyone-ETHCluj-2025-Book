@@ -4,7 +4,7 @@ Welcome to your first hands-on lab in smart contract development. This session i
 
 - Understand what smart contracts are and how they work
 - Discover real-world applications and analogies
-- Learn to write, deploy, and interact with a basic smart contract
+- Learn to deploy and interact with a basic smart contract
 
 ---
 
@@ -28,7 +28,7 @@ Smart contracts are the building blocks of **Web3**, the new decentralized versi
 
 ---
 
-## 2. 🌍 Why Smart Contracts Matter
+## 2. 🌍 Why Smart Contracts Matter?
 
 Smart contracts power the Web3 economy (version of the internet built on decentralized technologies) and open doors for decentralized innovation.
 
@@ -43,23 +43,21 @@ Smart contracts power the Web3 economy (version of the internet built on decentr
 ### 📦 Real-World Use Cases
 
 - [**DeFi**](https://ethereum.org/en/defi/): Replace banks with open financial apps:
-  - *Uniswap*: swap tokens instantly
-  - *Aave*: borrow crypto using crypto collateral
-  - *Lido*: stake ETH while keeping it usable
+  - [Uniswap](https://app.uniswap.org/): swap tokens instantly, even on weekends
+  - [Aave](https://aave.com/): borrow crypto using crypto collateral
+  - [Lido](https://lido.fi/): stake ETH while keeping it usable
 
-- [**Tokenization**](https://consensys.io/knowledge-base/tokenization/): Represent real assets as digital tokens (e.g. real estate, equity, gold)
+- [**Tokenization**](https://www.ibm.com/think/topics/tokenization): Represent real assets as digital tokens (e.g. real estate, funds, equity)
 
 - [**NFTs**](https://ethereum.org/en/nft/): Unique digital items with ownership (art, tickets, game assets)
 
-- [**Supply Chain**](https://consensys.io/blog/blockchain-use-cases/blockchain-in-supply-chain/): Transparent product tracking (e.g. coffee origins, brand authenticity)
+- [**Supply Chain**](https://dspace.mit.edu/handle/1721.1/114082): Transparent product tracking (e.g. brand authenticity)
 
-- [**Identity**](https://blog.ethereum.org/2021/04/28/ethereum-identity): Digital credentials like diplomas or certifications
+- [**Identity**](https://www.dock.io/post/decentralized-identity): Digital credentials like diplomas or certifications
 
 - [**DAOs**](https://ethereum.org/en/dao/): Decentralized communities with on-chain governance
 
-- **Games**: Player-owned in-game assets
-
-- **Payroll automation**: Auto-payments for contributors (bounties, vesting)
+- [**Payroll automation**](https://www.insightful.io/blog/blockchain-revolutionize-payroll): Auto-payments for contributors (salaries, bounties, vesting)
 
 ---
 
@@ -79,7 +77,8 @@ As a smart contract developer, you are not just writing code—you are programmi
 - **Security-first mindset**:
   - [DAO Hack (2016) – $60M drained](https://www.coindesk.com/learn/the-dao-hack-what-happened-and-what-followed/)
   - [Parity Multisig Bug (2017) – $280M locked](https://www.parity.io/security-alert-2/)
-  - A single missing `require()` can cost millions
+  - [Check more DeFi hacks](https://chainsec.io/defi-hacks/)
+  ! A single missing `require()` can cost millions
 - **Gas awareness**: Every operation costs ETH. Optimize your code to be efficient.
 
 ### Habits
@@ -106,6 +105,7 @@ Write a smart contract that simulates a **vending machine**.
 
 - [Remix IDE](https://remix.ethereum.org)
 - [MetaMask](https://metamask.io/) (Sepolia testnet)
+- [Faucet - get Sepolia Eth for gas fees](https://sepolia-faucet.pk910.de/#/)
 
 ### Code: `VendingMachine.sol`
 
@@ -147,22 +147,26 @@ contract VendingMachine {
 
 ### 🧽 Step-by-Step Guide
 
+Setup your metamask, deploy and interact with a smart contract - [tutorial](https://opencourse.inf.ed.ac.uk/sites/default/files/https/opencourse.inf.ed.ac.uk/bdl/2023/howtoconnecttoethereumtestnet.pdf)
+
 1. Open [Remix IDE](https://remix.ethereum.org)
 2. Paste the code in a new file: `VendingMachine.sol`
 3. Compile the contract
 4. Connect MetaMask (Sepolia testnet)
 5. Deploy the contract
 6. Call `buyItem("soda")` with 0.01 ETH
-7. See inventory decrease
+7. Sign the transaction using Metamask wallet
+7. See inventory decrease - call the inventory public function with "soda"
+8. Check the transaction hash on [Sepolia](https://sepolia.etherscan.io/)
 
 ---
 
 ## 5. 🔍 Bonus Exercises
 
 - Add a function `getInventory()` to return all stock
+- Allow owner to change prices
+- Add a `pauseContract()`
 - Keep a record of buyers: `mapping(address => string[])`
-- Allow owner to change prices dynamically
-- Add a `pauseContract()` feature using `require(!paused)`
 
 ---
 
@@ -172,10 +176,12 @@ contract VendingMachine {
 - [Remix IDE Tutorials](https://remix-ide.readthedocs.io)
 - [EtherScan Sepolia](https://sepolia.etherscan.io/)
 
-Learn more:
-- [CryptoZombies](https://cryptozombies.io/)
+Great courses to learn more:
+- [CryptoZombies](https://cryptozombies.io/) - very interactive
+- [Web3 University](https://www.web3.university/)
+- [Alchemy University](https://www.alchemy.com/university/courses) 
 - [Metacrafters Solidity Course](https://academy.metacrafters.io/courses/solidity)
 
 ---
 
-Congratulations! You've taken your first step into the world of smart contracts. From vending machines to tokenized assets, these small pieces of code are reshaping the digital economy. Next you will learn how to set up your solidity environment.
+Congratulations! You've taken your first step into the world of smart contracts. From vending machines to tokenized assets, these small pieces of code are reshaping the digital economy. Next you will learn how to set up your local solidity environment.
