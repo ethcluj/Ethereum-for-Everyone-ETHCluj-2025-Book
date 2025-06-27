@@ -1,7 +1,9 @@
 # Chapter 7: Testing Smart Contracts
 
 ## Introduction
-Learn comprehensive testing strategies for smart contract development.
+Smart contract testing is crucial for ensuring code reliability and security before deployment.
+Unlike traditional software, smart contracts are immutable once deployed, making thorough testing essential.
+This chapter covers comprehensive testing strategies using Foundry, from basic unit tests to advanced property verification.
 
 ## Topics Covered
 - [Testing frameworks](#testing-frameworks)
@@ -19,25 +21,18 @@ Learn comprehensive testing strategies for smart contract development.
 
 ### Testing frameworks
 
-1. Foundry - Allows users to write tests in Solidity by defining a test contract that imports the contract that's targeted for testing.
-Unique Features:
-- Native fuzzing capabilities
-- Gas optimization reports
-- Built-in cheatcodes for state manipulation
-- Forking capabilities
+1. Foundry -- allows you to write tests in Solidity, providing a native testing environment that closely mirrors production conditions.
+This approach offers several advantages over JavaScript-based testing frameworks.
 
-2. Hardhat - Allows users to write tests in JavaScript or TypeScript.
-Unique Features:
-- Extensive plugin ecosystem
-- Console.log in Solidity
-- Built-in Solidity stack traces
-- Hardhat Network with forking capabilities
-- TypeScript support
+**Unique Features:**
+- Native fuzzing capabilities with automatic input generation
+- Gas optimization reports and profiling
+- Built-in cheatcodes for precise state manipulation
+- Mainnet forking for realistic integration testing
 
-In the attached repository, there are projects for both Foundry and Hardhat of an ERC20 token, for which we will write some tests.(#TODO)
 
-Let’s go over the most common way of writing tests.
-The test file in the repo, should look close to this:
+### Project Setup
+In your Foundry project, tests should follow this structure:
 ```Solidity
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
@@ -46,14 +41,24 @@ import {Test, console} from "forge-std/Test.sol";
 import {GLDToken} from "../src/GLDToken.sol";
 
 contract GLDTokenTest is Test {
-
-    //TODO: write tests here
+    // Test implementation goes here
 }
 ```
+The `Test` contract from `forge-std` provides assertion functions and access to cheatcodes that make testing powerful and expressive.
+`Cheatcodes` are a particularity of the Foundry toolkit.
+You can look at them as special functions that allow users to change a block number, your identity, your account balance.
+[read more](https://getfoundry.sh/forge/tests/cheatcodes/).
+
+The `console` is a library which allows users to log messages and values during a test execution.
+
 Time to write some tests.
+
 ### Unit testing
+Unit testing focuses on individual contract functions in isolation.
+Let's build a comprehensive test suite for an ERC20 token to demonstrate best practices.
+
 Functions prefixed with `test` are considered to be a test case to run.
-Let's define a basic test for an ERC20 called `GLDToken`. 
+Let's define a basic test for an ERC20 called `GLDToken`.
 
 ```Solidity
     function test_deployment() public {
@@ -69,7 +74,7 @@ Let's define a basic test for an ERC20 called `GLDToken`.
 Let's analyze what happens above:
  - we define a receiver address, `0x100`.
  - we define an initial_supply value of (100 * 10 ** 18), which represents an amount of 100 tokens with 18 decimals of precision.
- - we deploy a new contract for our `ERC20`. the parameter represents the initial supply of tokens that will be minted.
+ - we deploy a new contract for our `ERC20`; the parameter represents the initial supply of tokens that will be minted.
  - we assert that the owner of the contract is the address of the test contract, from which the message was sent.
  - finally we assert the balance of the owner is equal to the initial supply.
 
@@ -82,13 +87,13 @@ To run the tests we can run
 
 We can see that the test is passing, and that there are no skipped/failing tests so far.
 
-However, there are a few limitations with this test.
+This test verifies deployment correctness, but has limitations: it uses hardcoded values and lacks reusability.
 First of all, the values used for testing are constant: we are testing a very specific scenario with a single value being transferred.
 Additionally, there is the boilerplate code.
 For next tests that we plan to write, we would need to repeat the deployment of the contract and the setup of the accounts.
 
 #### The `setUp` function
-Both testing frameworks allow users to define an initial state for all the tests to run in.
+Foundry allows users to define an initial state for all the tests to run in.
 In Foundry, the `setUp` function is an optional function invoked before each test case is run.
 Using a `setUp` improves the maintainability and readability of your test suite by avoiding code duplication.
 
@@ -154,6 +159,7 @@ I'm attaching a diff below so that the example is easier to follow.
 Now we're adding a new test named `test_transfer(uint256 amount)` in which we want to check the transfer functionality of the ERC20 contract.
 The argument of the function, `uint256 amount` is a test variable.
 Foundry will assign random values to this argument before the test is executed.
+Fuzz testing automatically generates random inputs to test edge cases you might not consider manually.
 What's also new, are the `vm.` calls, which are called cheatcodes.
 
 #### Cheatcodes
@@ -199,8 +205,62 @@ For example, we can modify `test_transfer` to get:
          bool status = token.transfer(bob, amount);
 ```
 
-### Fork testing
-TBD
+## Integration Testing
+
+Integration testing verifies that multiple contracts work together correctly.
+This often involves testing complex interactions and state changes across contract boundaries.
+
+### Fork Testing
+
+Fork testing allows you to test against real blockchain state, providing a more realistic testing environment.
+Forge supports testing in a forked environment with two different approaches:
+1. Forking Mode: use a single fork for all your tests via the `forge test --fork-url` flag
+2. Forking Cheatcodes - create, select and manage multiple forks directly in the Solidity test code via [forking cheatcodes](https://getfoundry.sh/reference/cheatcodes/forking/)
+
+Both instances will require for you to have a fork key from an RPC provider.
+You can get access to nodes for the most popular networks from providers such as Infura or Alchemy.
+Keep in mind to always keep your API-key private and don't publish it in your code or in your staged repository files.
+
+One setup example is to have a `.env` file with your keys:
+```bash
+# .env
+MAINNET_RPC_URL=https://mainnet.infura.io/v3/your-api-key
+GOERLI_RPC_URL=https://goerli.infura.io/v3/your-api-key
+POLYGON_RPC_URL=https://polygon-mainnet.infura.io/v3/your-api-key
+```
+
+Reference them in `foundry.toml`:
+```toml
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+
+[rpc_endpoints]
+mainnet = "${MAINNET_RPC_URL}"
+goerli = "${GOERLI_RPC_URL}"
+polygon = "${POLYGON_RPC_URL}"
+
+# Or directly in profiles
+[profile.mainnet]
+rpc_url = "${MAINNET_RPC_URL}"
+
+[profile.goerli]
+rpc_url = "${GOERLI_RPC_URL}"
+```
+
+Foundry will automatically load the `.env` file from project root, allowing you to run either
+1. `forge test --fork-url mainnet`
+2. `FOUNDRY_PROFILE=mainnet forge test`
+3. using the env url in the `setUp` function
+```Solidity
+    function setUp() public {
+        mainnetFork = vm.createFork(vm.envString("MAINNET_RPC_URL"));
+        vm.selectFork(mainnetFork);
+    }
+```
+
+Make sure to always have your `.env` file in the `.gitignore` file.
 
 ### Invariant testing
 sum of `_balances` == `totalSupply` example
