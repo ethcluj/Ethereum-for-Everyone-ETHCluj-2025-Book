@@ -64,7 +64,7 @@ Solutions to the exercises can be seen on the [accompanying PDF presentation sli
 
 #### Exercise #1 – The Kingdom
 
-**Description**: In a far far away land, governance has chosen to reward its most loyal subjects. The Treasury contract was deployed and gold coins were added for each subject to claim. An angry subject, which was omitted from the reward list, has become an attacker and wants to steal as many coins as possible.
+**Description**: In a far far away land, governance has chosen to reward its most loyal subjects. The `Treasury` contract was deployed and gold coins were added for each subject to claim. An angry subject, which was omitted from the reward list, has become an attacker and wants to steal as many coins as possible.
 
 **Task**: In the `Kingdom.t.sol::stealGoldCoins` function, implement what is necessary for the attacker to have at the end of the function call 56 full gold coins.
 
@@ -141,21 +141,21 @@ The following quiz is used to discuss how to evaluate impact with Loss Of Funds:
 
 How would you rate impact (none, low, medium, high, can't tell) in these situations?
 
-- A user loses 50$
-- A user loses 50$ out of a 500$ amount
-- A user loses 50$ out of a 5,000,000$ amount
-- A user loses 50$ per year
-- A user loses 50$ per year out of a 500$ amount
-- A user loses 50$ per year out of a 5,000,000$ amount
-- A user loses 50$ per day
-- A user loses 50$ per day out of a 500$ amount
-- A user loses 50$ per day out of a 5,000,000$ amount
-- A user suffers a theft of 50$
-- A user suffers a theft of 50$ out of a 500$ amount
-- A user suffers a theft of 50$ out of a 5,000,000$ amount
-- A user suffers a rounding error loss of 50$
-- A user suffers a rounding error loss of 50$ out of a 500$ amount
-- A user suffers a rounding error loss of 50$ out of a 5,000,000$ amount
+- A user loses $50
+- A user loses $50 out of a $500 amount
+- A user loses $50 out of a $5,000,000 amount
+- A user loses $50 per year
+- A user loses $50 per year out of a $500 amount
+- A user loses $50 per year out of a $5,000,000 amount
+- A user loses $50 per day
+- A user loses $50 per day out of a $500 amount
+- A user loses $50 per day out of a $5,000,000 amount
+- A user suffers a theft of $50
+- A user suffers a theft of $50 out of a $500 amount
+- A user suffers a theft of $50 out of a $5,000,000 amount
+- A user suffers a rounding error loss of $50
+- A user suffers a rounding error loss of $50 out of a $500 amount
+- A user suffers a rounding error loss of $50 out of a $5,000,000 amount
 
 Solutions to the exercises can be seen on the [accompanying PDF presentation slides](./resources/08-security-auditing/ETH-Cluj-2025-Security-Workshop.pdf).
 
@@ -175,7 +175,7 @@ The following is a non-exhaustive list of best practices when developing any pro
 
 - Limit user actions as much as possible
   - Actions such as allowing users to operate on-behalf-of others can introduce issues
-  -  If a user has no incentive to call a function, do not allow that function to be called by users
+  - If a user has no incentive to call a function, do not allow that function to be called by users
 - Move as much logic as possible off-chain
   - e.g. if smart contract requires a sorted list to work, check that the user-provided list is sorted, do not sort it on-chain
 - Always validate user-provided inputs (and protocol inputs)
@@ -324,7 +324,6 @@ Example of formal verification tools or fuzz testing frameworks:
 
 - Security is essential to Blockchain technology due to its FinTech nature
 - Blockchain Security as a field is still new and not fully standardized
-- Millions of dollars worth of assets are stolen each year due to smart contract vulnerabilities
 - Most vulnerabilities are known but not internalized by developers, leading to the need for multiple audits
 - Best practices will always reduce the chances of hacks
 - Smart Contract Auditing will exists as long as public Blockchain technology exists
